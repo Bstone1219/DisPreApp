@@ -5,41 +5,27 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-    <TextView
-            android:text="最新の地震情報"
-            android:layout_width="347dp"
-            android:layout_height="70dp"
-            android:id="@+id/textView2" android:layout_marginBottom="36dp"
-            app:layout_constraintBottom_toTopOf="@+id/toPreparing" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="50dp" android:layout_marginRight="50dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="50dp"
-            android:layout_marginStart="50dp" android:layout_marginTop="80dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+        tools:context=".CorrespondenceActivity">
 
     <Button
-            android:text="事前準備"
+            android:text="適切な行動"
             android:layout_width="350dp"
             android:layout_height="220dp"
-            android:id="@+id/toPreparing"
+            android:id="@+id/toCorrectAction"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="40dp" android:layout_marginRight="40dp"
-            app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="160dp"
-            android:layout_marginBottom="50dp" app:layout_constraintBottom_toTopOf="@+id/toCorresponding"/>
-
+            app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="140dp"
+            app:layout_constraintBottom_toTopOf="@+id/toIncorrectAction" android:layout_marginBottom="50dp"/>
     <Button
-            android:text="発生後の対応"
+            android:text="行ってはいけない行動"
             android:layout_width="350dp"
             android:layout_height="220dp"
-            android:id="@+id/toCorresponding"
+            android:id="@+id/toIncorrectAction"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="82dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.526"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/toPreparing"
-            app:layout_constraintVertical_bias="1.0"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/toCorrectAction" android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
