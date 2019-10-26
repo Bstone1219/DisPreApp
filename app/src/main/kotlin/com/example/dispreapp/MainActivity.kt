@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        toPreparation.setOnClickListener {
+            val intent = Intent(this, PreparationActivity::class.java)
+            startActivity(intent)
+        }
+
         toCorresponding.setOnClickListener {
             val intent = Intent(this, CorrespondenceActivity::class.java)
             startActivity(intent)
