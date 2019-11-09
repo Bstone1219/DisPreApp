@@ -3,7 +3,6 @@ package com.example.dispreapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_correspondence.*
 import kotlinx.android.synthetic.main.activity_preparation.*
 
 class PreparationActivity : AppCompatActivity() {

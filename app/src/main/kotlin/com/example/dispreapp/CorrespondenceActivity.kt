@@ -5,6 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_correspondence.*
 
+/***************************
+ 画面名：発生後の対応
+****************************/
+
 class CorrespondenceActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
