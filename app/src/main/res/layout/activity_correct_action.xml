@@ -17,27 +17,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />
-        <Button
-                android:text="発生場所と対応"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:id="@+id/placeAndCorres"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="40dp" android:layout_marginStart="32dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/otherCorrectAction"
-                android:paddingLeft="30dp" android:paddingRight="30dp"/>
-        <Button
-                android:text="その他正しい行動"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:id="@+id/otherCorrectAction" app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="40dp" android:layout_marginLeft="40dp" android:layout_marginStart="40dp"
-                app:layout_constraintStart_toEndOf="@+id/placeAndCorres"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"/>
+    <Button
+            android:text="発生場所と対応"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:id="@+id/placeAndCorres"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="40dp" android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/otherCorrectAction"
+            android:paddingLeft="30dp" android:paddingRight="30dp"/>
+    <Button
+            android:text="その他正しい行動"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:id="@+id/otherCorrectAction" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="64dp" android:layout_marginLeft="40dp" android:layout_marginStart="40dp"
+            app:layout_constraintStart_toEndOf="@+id/placeAndCorres"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"/>
 
         <Button
                 android:text="室　内"
@@ -168,9 +168,29 @@
     ※個人でできるのは初期消火まで。大きな火災の場合は、逃げることを最優先に考える。
     "
                     android:layout_width="match_parent"
-                    android:id="@+id/otherCorrectActionText" android:layout_height="match_parent"
+                    android:id="@+id/Contents" android:layout_height="match_parent"
             />
         </ScrollView>
+    <TextView
+            android:text="TOPへ"
+            android:layout_width="76dp"
+            android:layout_height="26dp"
+            android:id="@+id/toTop" android:textColor="#3F51B5"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/imageView"
+            android:layout_marginBottom="2dp" app:layout_constraintBottom_toTopOf="@+id/otherCorrectAction"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="@+id/imageView"
+            android:layout_marginRight="8dp" android:paddingLeft="20dp" android:paddingTop="5dp"
+            android:textSize="15sp"/>
+    <TextView
+            android:layout_width="116dp"
+            android:layout_height="35dp"
+            android:id="@+id/title" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/imageView" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/placeAndCorres"
+            app:layout_constraintStart_toStartOf="@+id/imageView" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:text="適切な行動" android:paddingLeft="15dp"
+            android:paddingTop="8dp" android:textSize="18sp" android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

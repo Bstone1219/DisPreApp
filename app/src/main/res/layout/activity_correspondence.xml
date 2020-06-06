@@ -5,27 +5,39 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="horizontal"
         tools:context=".CorrespondenceActivity">
-
-    <Button
-            android:text="適切な行動"
-            android:layout_width="350dp"
-            android:layout_height="220dp"
-            android:id="@+id/toCorrectAction"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="40dp" android:layout_marginRight="40dp"
-            app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="140dp"
-            app:layout_constraintBottom_toTopOf="@+id/toIncorrectAction" android:layout_marginBottom="50dp"/>
-    <Button
-            android:text="行ってはいけない行動"
-            android:layout_width="350dp"
-            android:layout_height="220dp"
-            android:id="@+id/toIncorrectAction"
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/correspondence"
+            android:id="@+id/imageView"
+            android:src="@drawable/correspondence"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="82dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.526"
-            app:layout_constraintTop_toBottomOf="@+id/toCorrectAction" android:layout_marginTop="16dp"/>
+    />
+
+        <Button
+                android:text="適切な行動"
+                android:layout_width="350dp"
+                android:layout_height="220dp"
+                android:id="@+id/toCorrectAction"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="40dp" android:layout_marginRight="40dp"
+                app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="140dp"
+                app:layout_constraintBottom_toTopOf="@+id/toIncorrectAction" android:layout_marginBottom="50dp"/>
+        <Button
+                android:text="行ってはいけない行動"
+                android:layout_width="350dp"
+                android:layout_height="220dp"
+                android:id="@+id/toIncorrectAction"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="82dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintTop_toBottomOf="@+id/toCorrectAction" android:layout_marginTop="16dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

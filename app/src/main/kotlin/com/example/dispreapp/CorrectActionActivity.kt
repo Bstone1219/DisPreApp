@@ -1,10 +1,14 @@
 package com.example.dispreapp
 
+import android.content.Intent
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.Button
 import android.widget.ScrollView
+import android.widget.TextView
 import com.example.dispreapp.consts.CorrespondenceActivityTextConst
 import kotlinx.android.synthetic.main.activity_correct_action.*
 import android.view.View.INVISIBLE as ViewINVISIBLE
@@ -29,6 +33,7 @@ class CorrectActionActivity : AppCompatActivity() {
         val dummy4 = findViewById<Button>(R.id.dummy4)
         val dummy5 = findViewById<Button>(R.id.dummy5)
         val dummy6 = findViewById<Button>(R.id.dummy6)
+        val toTop = findViewById<TextView>(R.id.toTop)
 
         var placeAndCorresFlg = 0
         var otherCorrectActionFlg = 0
@@ -36,6 +41,14 @@ class CorrectActionActivity : AppCompatActivity() {
         var outSideFlg = 0
         var dummySwitchFlg = 0
         var dummyBtnNum = 0
+
+        toTop.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        toTop.movementMethod = LinkMovementMethod.getInstance()
+        toTop.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         placeAndCorres.setOnClickListener {
             if (placeAndCorresFlg == 1) {
                 placeAndCorresScroll.visibility = View.GONE
