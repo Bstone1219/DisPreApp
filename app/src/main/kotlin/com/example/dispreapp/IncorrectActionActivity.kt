@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.method.LinkMovementMethod
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_correct_action.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 /***************************
@@ -26,6 +27,10 @@ class IncorrectActionActivity : AppCompatActivity() {
         toTop.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
     }
 }

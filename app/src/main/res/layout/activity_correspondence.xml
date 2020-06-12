@@ -18,26 +18,67 @@
             app:layout_constraintStart_toStartOf="parent"
     />
 
-        <Button
-                android:text="適切な行動"
-                android:layout_width="350dp"
-                android:layout_height="220dp"
-                android:id="@+id/toCorrectAction"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="40dp" android:layout_marginRight="40dp"
-                app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="140dp"
-                app:layout_constraintBottom_toTopOf="@+id/toIncorrectAction" android:layout_marginBottom="50dp"/>
-        <Button
-                android:text="行ってはいけない行動"
-                android:layout_width="350dp"
-                android:layout_height="220dp"
-                android:id="@+id/toIncorrectAction"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="82dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.526"
-                app:layout_constraintTop_toBottomOf="@+id/toCorrectAction" android:layout_marginTop="16dp"/>
+    <Button
+            android:text="て き せ つ な 行 動 を \n知 ろ う ！"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:id="@+id/toCorrectAction"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="40dp" android:layout_marginRight="40dp"
+            app:layout_constraintHorizontal_bias="0.526" android:layout_marginTop="160dp"
+            app:layout_constraintBottom_toTopOf="@+id/toIncorrectAction" android:layout_marginBottom="50dp"
+            android:textSize="25sp" android:textStyle="bold"
+            android:textAllCaps="false" android:textColor="#435CE6"
+            android:background="@drawable/shape_rounded_corners_10dp_correspondence"/>
+    <Button
+            android:text="間 違 っ た 行 動 を \n知 ろ う ！"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:id="@+id/toIncorrectAction"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="40dp" android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="70dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintTop_toBottomOf="@+id/toCorrectAction" android:layout_marginTop="24dp"
+            android:background="@drawable/shape_rounded_corners_10dp_correspondence" android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#435CE6"/>
+    <TextView
+            android:text="発生後の対応"
+            android:layout_width="148dp"
+            android:layout_height="40dp"
+            android:id="@+id/title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textStyle="bold"
+            android:paddingLeft="5dp" android:paddingTop="5dp" android:layout_marginTop="64dp"
+            app:layout_constraintTop_toTopOf="@+id/imageView" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/toCorrectAction" android:layout_marginStart="40dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView" android:layout_marginLeft="40dp"/>
+    <ImageView
+            android:layout_width="410dp"
+            android:layout_height="60dp" app:srcCompat="@color/design_default_color_primary"
+            android:id="@+id/headerBar"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView" app:layout_constraintStart_toStartOf="@+id/imageView"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="TOPへ"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:id="@+id/toTop" android:textColor="#FFFFFF"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            android:paddingLeft="15dp" android:paddingTop="20dp"
+            android:textSize="15sp"
+            android:background="#FF3F51B5" android:textStyle="bold"
+    />
+    <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="60dp" app:srcCompat="@android:drawable/ic_menu_revert"
+            android:id="@+id/backButton"
+            android:background="#FF3F51B5" app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/headerBar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

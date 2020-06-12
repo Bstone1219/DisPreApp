@@ -1,6 +1,7 @@
 package com.example.dispreapp
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,8 @@ class CorrectActionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_correct_action)
 
+        // レイアウトのID取得
+        val toTop = findViewById<TextView>(R.id.toTop)
         val placeAndCorresScroll = findViewById<ScrollView>(R.id.placeAndCorresScroll)
         val otherCorrectActionScroll = findViewById<ScrollView>(R.id.otherCorrectActionScroll)
         val insideBtn = findViewById<Button>(R.id.inside)
@@ -33,8 +36,12 @@ class CorrectActionActivity : AppCompatActivity() {
         val dummy4 = findViewById<Button>(R.id.dummy4)
         val dummy5 = findViewById<Button>(R.id.dummy5)
         val dummy6 = findViewById<Button>(R.id.dummy6)
-        val toTop = findViewById<TextView>(R.id.toTop)
 
+        // ボタンのレイアウト
+        val noPush = R.drawable.shape_rounded_corners_5dp_correct_action_before
+        val pushed = R.drawable.shape_rounded_corners_5dp_correct_action_after
+
+        //　ボタンフラグ
         var placeAndCorresFlg = 0
         var otherCorrectActionFlg = 0
         var inSideFlg = 0
@@ -42,6 +49,12 @@ class CorrectActionActivity : AppCompatActivity() {
         var dummySwitchFlg = 0
         var dummyBtnNum = 0
 
+        // backボタン押下処理
+        backButton.setOnClickListener {
+            finish()
+        }
+
+        // 「TOPへ」押下処理
         toTop.paintFlags = Paint.UNDERLINE_TEXT_FLAG
         toTop.movementMethod = LinkMovementMethod.getInstance()
         toTop.setOnClickListener {
@@ -49,7 +62,9 @@ class CorrectActionActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 「発生場所と対応」押下処理
         placeAndCorres.setOnClickListener {
+
             if (placeAndCorresFlg == 1) {
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
@@ -59,6 +74,15 @@ class CorrectActionActivity : AppCompatActivity() {
                 otherCorrectActionFlg = 0
             }
             if (insideBtn.visibility == View.VISIBLE && outsideBtn.visibility == View.VISIBLE) {
+                placeAndCorres.setBackgroundResource(noPush)
+                inside.setBackgroundResource(noPush)
+                outside.setBackgroundResource(noPush)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 insideBtn.visibility = View.GONE
                 outsideBtn.visibility = View.GONE
                 if (dummySwitchFlg == 1) {
@@ -74,13 +98,25 @@ class CorrectActionActivity : AppCompatActivity() {
                 dummySwitchFlg = 0
                 dummyBtnNum = 0
             } else {
+                placeAndCorres.setBackgroundResource(pushed)
+                otherCorrectAction.setBackgroundResource(noPush)
                 insideBtn.visibility = View.VISIBLE
                 outsideBtn.visibility = View.VISIBLE
             }
         }
 
+        // 「その他正しい行動」押下処理
         otherCorrectAction.setOnClickListener {
+
             if (insideBtn.visibility == View.VISIBLE && outsideBtn.visibility == View.VISIBLE) {
+                inside.setBackgroundResource(noPush)
+                outside.setBackgroundResource(noPush)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 insideBtn.visibility = View.GONE
                 outsideBtn.visibility = View.GONE
                 if (dummySwitchFlg == 1) {
@@ -100,15 +136,20 @@ class CorrectActionActivity : AppCompatActivity() {
                 outSideFlg = 0
             }
             if (otherCorrectActionFlg == 0) {
+                otherCorrectAction.setBackgroundResource(pushed)
+                placeAndCorres.setBackgroundResource(noPush)
                 otherCorrectActionScroll.visibility = View.VISIBLE
                 otherCorrectActionFlg = 1
             } else {
+                otherCorrectAction.setBackgroundResource(noPush)
                 otherCorrectActionScroll.visibility = View.GONE
                 otherCorrectActionFlg = 0
             }
         }
 
+        // 「室内」押下処理
         inside.setOnClickListener {
+
             if (placeAndCorresFlg == 1) {
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
@@ -130,6 +171,14 @@ class CorrectActionActivity : AppCompatActivity() {
                     dummy6.visibility = View.VISIBLE
                     dummySwitchFlg = 1
                 }
+                inside.setBackgroundResource(pushed)
+                outside.setBackgroundResource(noPush)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 inSideFlg = 1
                 outSideFlg = 0
             } else if (dummySwitchFlg == 1) {
@@ -139,13 +188,22 @@ class CorrectActionActivity : AppCompatActivity() {
                 dummy4.visibility = View.GONE
                 dummy5.visibility = View.GONE
                 dummy6.visibility = View.GONE
+                inside.setBackgroundResource(noPush)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 dummySwitchFlg = 0
                 inSideFlg = 0
                 outSideFlg = 0
             }
         }
 
+        // 「屋外」押下処理
         outside.setOnClickListener {
+
             if (placeAndCorresFlg == 1) {
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
@@ -153,7 +211,7 @@ class CorrectActionActivity : AppCompatActivity() {
             }
             if ((inSideFlg == 0 && outSideFlg == 0) || inSideFlg == 1) {
                 dummy1.text = "住宅街"
-                dummy2.text = "オフィス街・繁華街"
+                dummy2.text = "オフィス街・\n繁華街"
                 dummy3.text = "海岸"
                 dummy4.text = "川べり"
                 dummy5.text = "山・丘陵地"
@@ -167,6 +225,14 @@ class CorrectActionActivity : AppCompatActivity() {
                     dummy6.visibility = View.VISIBLE
                     dummySwitchFlg = 1
                 }
+                inside.setBackgroundResource(noPush)
+                outside.setBackgroundResource(pushed)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 inSideFlg = 0
                 outSideFlg = 1
             } else if (dummySwitchFlg == 1) {
@@ -176,14 +242,31 @@ class CorrectActionActivity : AppCompatActivity() {
                 dummy4.visibility = View.GONE
                 dummy5.visibility = View.GONE
                 dummy6.visibility = View.GONE
+                outside.setBackgroundResource(noPush)
+                dummy1.setBackgroundResource(noPush)
+                dummy2.setBackgroundResource(noPush)
+                dummy3.setBackgroundResource(noPush)
+                dummy4.setBackgroundResource(noPush)
+                dummy5.setBackgroundResource(noPush)
+                dummy6.setBackgroundResource(noPush)
                 dummySwitchFlg = 0
                 inSideFlg = 0
                 outSideFlg = 0
             }
         }
 
+        // 「ダミー1」押下処理
         dummy1.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 1) {
+                dummy1.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    2 -> dummy2.setBackgroundResource(noPush)
+                    3 -> dummy3.setBackgroundResource(noPush)
+                    4 -> dummy4.setBackgroundResource(noPush)
+                    5 -> dummy5.setBackgroundResource(noPush)
+                    6 -> dummy6.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 1
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.HOME
@@ -195,14 +278,25 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy1.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
             }
         }
 
+        // 「ダミー2」押下処理
         dummy2.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 2) {
+                dummy2.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    1 -> dummy1.setBackgroundResource(noPush)
+                    3 -> dummy3.setBackgroundResource(noPush)
+                    4 -> dummy4.setBackgroundResource(noPush)
+                    5 -> dummy5.setBackgroundResource(noPush)
+                    6 -> dummy6.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 2
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.SLEEPING
@@ -214,14 +308,25 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy2.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
             }
         }
 
+        // 「ダミー3」押下処理
         dummy3.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 3) {
+                dummy3.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    1 -> dummy1.setBackgroundResource(noPush)
+                    2 -> dummy2.setBackgroundResource(noPush)
+                    4 -> dummy4.setBackgroundResource(noPush)
+                    5 -> dummy5.setBackgroundResource(noPush)
+                    6 -> dummy6.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 3
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.BATHING
@@ -233,14 +338,25 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy3.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
             }
         }
 
+        // 「ダミー4」押下処理
         dummy4.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 4) {
+                dummy4.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    1 -> dummy1.setBackgroundResource(noPush)
+                    2 -> dummy2.setBackgroundResource(noPush)
+                    3 -> dummy3.setBackgroundResource(noPush)
+                    5 -> dummy5.setBackgroundResource(noPush)
+                    6 -> dummy6.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 4
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.KITCHEN
@@ -252,14 +368,25 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy4.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
             }
         }
 
+        // 「ダミー5」押下処理
         dummy5.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 5) {
+                dummy5.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    1 -> dummy1.setBackgroundResource(noPush)
+                    2 -> dummy2.setBackgroundResource(noPush)
+                    3 -> dummy3.setBackgroundResource(noPush)
+                    4 -> dummy4.setBackgroundResource(noPush)
+                    6 -> dummy6.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 5
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.WORKPLACE
@@ -271,14 +398,25 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy5.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
             }
         }
 
+        // 「ダミー6」押下処理
         dummy6.setOnClickListener {
+
             if (dummyBtnNum == 0 || dummyBtnNum != 6) {
+                dummy6.setBackgroundResource(pushed)
+                when(dummyBtnNum) {
+                    1 -> dummy1.setBackgroundResource(noPush)
+                    2 -> dummy2.setBackgroundResource(noPush)
+                    3 -> dummy3.setBackgroundResource(noPush)
+                    4 -> dummy4.setBackgroundResource(noPush)
+                    5 -> dummy5.setBackgroundResource(noPush)
+                }
                 dummyBtnNum = 6
                 if (inSideFlg == 1 && outSideFlg == 0) {
                     placeAndCorresText.text = CorrespondenceActivityTextConst.ELEVATOR
@@ -290,6 +428,7 @@ class CorrectActionActivity : AppCompatActivity() {
                     placeAndCorresFlg = 1
                 }
             } else {
+                dummy6.setBackgroundResource(noPush)
                 placeAndCorresScroll.visibility = View.GONE
                 placeAndCorresFlg = 0
                 dummyBtnNum = 0
